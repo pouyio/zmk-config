@@ -211,7 +211,7 @@
 &trans    &kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &tog GAME         &kp LS(N6) &kp LS(N7) &custom_p &kp LS(N9)  &kp LS(N0) &trans
 &trans    &kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w  &kp MINUS                    &kp LS(N1) &custom_gt_m &custom_b &custom_bk &kp LS(MINUS) &trans
 &trans    &kp LSHFT &trans    &swap_t_p &swap_t  &kp LBKT    &trans &trans &kp RBKT &kp LS(N2) &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) &trans
-                    &trans    &trans   &trans    &trans  &trans &trans  &lt M_RAISE LC(BSPC)  &kp LA(DEL)   &trans    &trans
+                    &trans    &trans   &trans    &trans  &trans &trans  &lt M_RAISE LA(BSPC)  &kp LA(DEL)   &trans    &trans
             >;
         };
 
