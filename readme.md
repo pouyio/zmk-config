@@ -16,7 +16,6 @@ Config adapted to **my** personal needs:
 - Shift/Alt mod tap in base row, both sides.
 - Added macros for both Mac and Linux/Win (change workspace, change tab).
 - Layer tap in raise/lower buttons.
-- Caps lock tapping both shifts.
 - Only sofle: [Gaming layers for left half](https://github.com/pouyio/keymaps-qmk/blob/master/sofle/README.md).
 
 ## Instructions

@@ -49,12 +49,6 @@
             bindings = <&kp LCTRL>;
             layers = <M_BASE>;
         };
-        combo_caps {
-            timeout-ms = <150>;
-            key-positions = <37 48>;
-            bindings = <&kp CAPS>;
-            layers = <BASE M_BASE>;
-        };
     };
 
     behaviors {
@@ -147,13 +141,13 @@
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |   I   |  O   |   P   |       |
 // |       |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |   K   |  L   |  Ñ   |       |
-// |       |Z/SHIFT|X/ALT| C  |  V   |  B   |        |  |       |  N   |  M    |   ,   | ./ATL|-/SHIFT|      |
+// |       |Z/SHIFT|X/ALT| C  |  V   |  B   |        |  |       |  N   |  M    |   ,   |  .   |-/SHIFT|      |
 //               |     |    | CTRL/ESC | LOWER/TAB|  SPACE |  | ENTER | RAISE/BKSPC| DEL  |       |       |
             bindings = <
 &none   &none  &none    &none    &none     &none                            &none  &none     &none     &none    &none   &none
 &none   &kp Q &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &none
 &none   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L   &lp SEMI SQT  &none
-&none   &mt LSHIFT Z  &mt LALT X    &kp C    &kp V  &kp B   &none &none    &kp N  &kp M     &kp COMMA &mt LALT DOT  &mt RSHFT FSLH &none
+&none   &mt LSHIFT Z  &mt LALT X    &kp C    &kp V  &kp B   &none &none    &kp N  &kp M     &kp COMMA &kp DOT  &mt RSHFT FSLH &none
                      &none   &none &mt LCTRL ESC &lt LOWER TAB &kp SPACE    &kp RET  &lt RAISE BSPC &kp DEL &none  &none
             >;
 
@@ -165,13 +159,13 @@
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |   I   |  O   |   P   |       |
 // |       |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |   K   |  L   |  Ñ   |       |
-// |       |Z/SHIFT|X/ALT| C  |  V   |  B   |        |  |       |  N   |  M    |   ,   | ./ATL|-/SHIFT|      |
+// |       |Z/SHIFT|X/ALT| C  |  V   |  B   |        |  |       |  N   |  M    |   ,   |  .   |-/SHIFT|      |
 //               |     |    | CTRL/ESC | LOWER/TAB|  SPACE |  | ENTER | RAISE/BKSPC| DEL  |       |       |
             bindings = <
 &none   &none  &none    &none    &none     &none                            &none  &none     &none     &none    &none   &none
 &none   &kp Q &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &none
 &none   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L   &lp SEMI SQT  &none
-&none   &mt LSHIFT Z  &mt LALT X    &kp C    &kp V  &kp B   &none &none    &kp N  &kp M     &kp COMMA &mt LALT DOT  &mt RSHFT FSLH &none
+&none   &mt LSHIFT Z  &mt LALT X    &kp C    &kp V  &kp B   &none &none    &kp N  &kp M     &kp COMMA &kp DOT  &mt RSHFT FSLH &none
                      &none   &none &mt LGUI ESC &lt M_LOWER TAB &kp SPACE    &kp RET  &lt M_RAISE BSPC &kp DEL &none  &none
             >;
 
@@ -184,7 +178,7 @@
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |VOLU | MUTE|PRV_WPC|NXT_WPC|GAME|                   |  &   |  /    |  (    |  )   |   =   |       |
 // |       | VOLD | PLAY | prev_w | swap_w |  '   |                   |  !   |  <    |  {    |  [   |   ?   |       |
-// |       | SHIFT|     | prev_t | swap_t |  `   |        |  |       |  +   |  "    |  ;    |  :   |   _   |       |
+// |       | SHIFT| CAPS | prev_t | swap_t |  `   |        |  |       |  +   |  "    |  ;    |  :   |   _   |       |
 //               |     |      |      |      |        |  |       |     | WORD_DEL |       |      |
 // ------------------------------------------------------------------------------------------------------------
 
@@ -192,7 +186,7 @@
 &trans    &trans   &trans   &trans   &trans   &trans                                &trans   &trans   &trans    &trans   &trans   &trans  
 &trans    &kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &tog GAME         &kp LS(N6) &kp LS(N7) &custom_p &kp LS(N9)  &kp LS(N0) &trans
 &trans    &kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w  &kp MINUS                    &kp LS(N1) &custom_gt  &custom_b &custom_bk &kp LS(MINUS) &trans
-&trans    &kp LSHFT &trans    &swap_t_p &swap_t  &kp LBKT    &trans &trans &kp RBKT &kp LS(N2) &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) &trans
+&trans    &kp LSHFT &kp CAPS &swap_t_p &swap_t  &kp LBKT    &trans &trans &kp RBKT &kp LS(N2) &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) &trans
                     &trans    &trans   &trans    &trans  &trans &trans  &lt RAISE LC(BSPC)  &kp LC(DEL)   &trans    &trans
             >;
         };
@@ -202,7 +196,7 @@
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |VOLU | MUTE|PRV_WPC|NXT_WPC|GAME|                   |  &   |  /    |  (    |  )   |   =   |       |
 // |       | VOLD | PLAY | prev_w | swap_w |  '   |                   |  !   |  <    |  {    |  [   |   ?   |       |
-// |       | SHIFT|     | prev_t | swap_t |  `   |        |  |       |  +   |  "    |  ;    |  :   |   _   |       |
+// |       | SHIFT| CAPS | prev_t | swap_t |  `   |        |  |       |  +   |  "    |  ;    |  :   |   _   |       |
 //               |     |      |      |      |        |  |       |     | WORD_DEL |       |      |
 // ------------------------------------------------------------------------------------------------------------
 
@@ -210,7 +204,7 @@
 &trans    &trans   &trans   &trans   &trans   &trans                                &trans   &trans   &trans    &trans   &trans   &trans  
 &trans    &kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &tog GAME         &kp LS(N6) &kp LS(N7) &custom_p &kp LS(N9)  &kp LS(N0) &trans
 &trans    &kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w  &kp MINUS                    &kp LS(N1) &custom_gt_m &custom_b &custom_bk &kp LS(MINUS) &trans
-&trans    &kp LSHFT &trans    &swap_t_p &swap_t  &kp LBKT    &trans &trans &kp RBKT &kp LS(N2) &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) &trans
+&trans    &kp LSHFT &kp CAPS  &swap_t_p &swap_t  &kp LBKT    &trans &trans &kp RBKT &kp LS(N2) &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) &trans
                     &trans    &trans   &trans    &trans  &trans &trans  &lt M_RAISE LA(BSPC)  &kp LA(DEL)   &trans    &trans
             >;
         };
