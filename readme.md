@@ -23,6 +23,6 @@ Config adapted to **my** personal needs:
 ## Instructions
 
 To build in local follow the [official development guide](https://zmk.dev/docs/development/setup) and download [urob's ZMK](https://github.com/urob/zmk). Execute the custom build script:
-`./scripts/zmk_build.sh -l -v 3.2 --host-config-dir /home/zmk-config --host-zmk-dir /home/zmk -o /home/zmk-config/build  -- -p`
+`./scripts/zmk_build.sh -l -v 3.5 --host-config-dir /home/zmk-config --host-zmk-dir /home/zmk -o /home/zmk-config/build  -- -p`
 
 Change `--host-config-dir`, `--host-zmk-dir` and/or `-o` to the correct directories
