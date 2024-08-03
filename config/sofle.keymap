@@ -43,10 +43,34 @@
             bindings = <&kp LGUI>;
             layers = <BASE>;
         };
+        combo_gui_left {
+            timeout-ms = <50>;
+            key-positions = <16 28>;
+            bindings = <&sk LGUI>;
+            layers = <BASE>;
+        };
+        combo_gui_right {
+            timeout-ms = <50>;
+            key-positions = <19 31>;
+            bindings = <&sk LGUI>;
+            layers = <BASE>;
+        };
         combo_ctrl {
             timeout-ms = <50>;
             key-positions = <13 14>;
             bindings = <&kp LCTRL>;
+            layers = <M_BASE>;
+        };
+        combo_ctrl_left {
+            timeout-ms = <50>;
+            key-positions = <16 28>;
+            bindings = <&sk LCTRL>;
+            layers = <M_BASE>;
+        };
+        combo_ctrl_right {
+            timeout-ms = <50>;
+            key-positions = <19 31>;
+            bindings = <&sk LCTRL>;
             layers = <M_BASE>;
         };
     };
