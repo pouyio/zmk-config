@@ -162,11 +162,13 @@ then
     DOCKER_PREFIX="$DOCKER_CMD -w $DOCKER_ZMK_DIR/app $DOCKER_IMG"
     SUFFIX="${ZEPHYR_VERSION}_docker"
     CONFIG_DIR="$DOCKER_CONFIG_DIR/config"
+    EXTRA_MODULE_DIR="$DOCKER_CONFIG_DIR"
 
 else
     echo "Build mode: local"
     SUFFIX="${ZEPHYR_VERSION}"
     CONFIG_DIR="$HOST_CONFIG_DIR/config"
+    EXTRA_MODULE_DIR="$HOST_CONFIG_DIR"
     cd "$HOST_ZMK_DIR/app"
 fi
 
@@ -177,7 +179,7 @@ compile_board () {
     [[ $MULTITHREAD = "true" ]] || echo -en "\n$(tput setaf 2)Building $1_$2... $(tput sgr0)"
     [[ $MULTITHREAD = "true" ]] && echo -e "$(tput setaf 2)Building $1_$2... $(tput sgr0)"
     $DOCKER_PREFIX west build -d "build/$BUILD_DIR" -b $1 $WEST_OPTS \
-        -- -DZMK_CONFIG="$CONFIG_DIR" -DSHIELD="$2" -Wno-dev > "$LOGFILE" 2>&1
+        -- -DZMK_CONFIG="$CONFIG_DIR" -DZMK_EXTRA_MODULES="$EXTRA_MODULE_DIR" -DSHIELD="$2" -Wno-dev > "$LOGFILE" 2>&1
     if [[ $? -eq 0 ]]
     then
         [[ $MULTITHREAD = "true" ]] || echo "$(tput setaf 2)done$(tput sgr0)"
