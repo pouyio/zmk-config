@@ -113,6 +113,34 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             label = "custom brace";
         };
+        custom_q: custom_question {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(MINUS)>, <&kp PLUS>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "custom question";
+        };
+        custom_e: custom_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N1)>, <&kp EQUAL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "custom exclamation";
+        };
+        custom_s: custom_slash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N7)>, <&kp RA(GRAVE)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "custom slash";
+        };
+        custom_s_m: custom_slash_mac {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N7)>, <&kp BSLH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "custom slash macos";
+        };
         swap_w: tri-state-window {
             compatible = "zmk,behavior-tri-state";
             label = "swap window";
@@ -190,8 +218,8 @@
 //                            |      |      |        |  |       |     | WORD_DEL |
 // ------------------------------------------------------------------------------------------------------------
             bindings = <
-&none &kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &trans      &kp LS(N6) &kp LS(N7) &custom_p &kp LS(N9)  &kp LS(N0) &none
-&none &kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w  &kp MINUS                     &kp LS(N1) &custom_gt  &custom_b &custom_bk &kp LS(MINUS) &none
+&none &kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &trans      &kp LS(N6) &custom_s   &custom_p &kp LS(N9)  &kp LS(N0) &none
+&none &kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w  &kp MINUS                     &custom_e &custom_gt  &custom_b &custom_bk &custom_q &none
 &none &kp LSHFT &kp CAPS    &swap_t_p &swap_t  &kp LBKT                          &kp RBKT &kp LS(N2) &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) &none
                                    &trans    &trans  &trans &trans  &lt RAISE LC(BSPC)  &kp LC(DEL)
             >;
@@ -206,8 +234,8 @@
 // ------------------------------------------------------------------------------------------------------------
 
             bindings = <
-&none &kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &trans   &kp LS(N6) &kp LS(N7) &custom_p &kp LS(N9)  &kp LS(N0) &none
-&none &kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w  &kp MINUS                   &kp LS(N1) &custom_gt_m &custom_b &custom_bk &kp LS(MINUS) &none
+&none &kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &trans   &kp LS(N6) &custom_s_m &custom_p &kp LS(N9)  &kp LS(N0) &none
+&none &kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w  &kp MINUS                   &custom_e  &custom_gt_m &custom_b &custom_bk  &custom_q &none
 &none &kp LSHFT &kp CAPS    &swap_t_p &swap_t  &kp LBKT                        &kp RBKT &kp LS(N2) &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) &none
                                        &trans    &trans  &trans &trans  &lt M_RAISE LA(BSPC)  &kp LA(DEL)
             >;
@@ -244,28 +272,28 @@
 
         adjust_layer {
 // ----------------------------------------------------------------------------------------------------------------------------
-// |   ¡     |  WIN    |    €    |         |    ¿    |                 |      |   7  |   8   |  9   |   0   |
-// |   \     |  MAC    |        |  EXTPWR |  BTCLR  |                  |      |   4  |   5   |  6   |   ~   |
+// |         |  WIN    |    €    |         |         |                 |      |   7  |   8   |  9   |   0   |
+// |         |  MAC    |        |  EXTPWR |  BTCLR  |                  |      |   4  |   5   |  6   |   ~   |
 // |  BT1   |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |   1  |   2   |  3   |       |
 //                              |         |         |         | |      |      |      |
             label = "adjust";
             bindings = <
-&none &kp EQUAL     &to BASE    &kp RA(E)   &none       &kp PLUS                              &none &kp N7 &kp N8 &kp N9 &kp N0 &none
-&none &kp RA(GRAVE) &to M_BASE  &none  &ext_power EP_OFF &bt BT_CLR                            &none &kp N4 &kp N5 &kp N6 &kp RA(N4) &none
+&none &none        &to BASE    &kp RA(E)   &none       &none                                  &none &kp N7 &kp N8 &kp N9 &kp N0 &none
+&none &none        &to M_BASE  &none  &ext_power EP_OFF &bt BT_CLR                            &none &kp N4 &kp N5 &kp N6 &kp RA(N4) &none
 &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                      &none  &kp N1 &kp N2 &kp N3 &none &none
                                   &none   &none   &none           &none  &none &none 
             >;
         };
         adjust_layer_m {
 // ----------------------------------------------------------------------------------------------------------------------------
-// |   !     |  WIN    |    €    |         |    ¿    |                  |      |   7  |   8   |  9   |   0   |
-// |   \     |  MAC    |         |  EXTPWR |  BTCLR  |                  |      |   4  |   5   |  6   |   ~   |
+// |         |  WIN    |    €    |         |         |                  |      |   7  |   8   |  9   |   0   |
+// |         |  MAC    |         |  EXTPWR |  BTCLR  |                  |      |   4  |   5   |  6   |   ~   |
 // |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |   1  |   2   |  3   |       |
 //                               |         |         |         | |      |      |      |
             label = "adjust_m";
              bindings = <
-&none &kp EQUAL     &to BASE    &kp RA(E)   &none       &kp PLUS                              &none &kp N7 &kp N8 &kp N9 &kp N0 &none
-&none &kp BSLH     &to M_BASE  &none  &ext_power EP_OFF &bt BT_CLR                            &none &kp N4 &kp N5 &kp N6 &kp RA(SEMI) &none
+&none &none       &to BASE    &kp RA(E)   &none       &none                                  &none &kp N7 &kp N8 &kp N9 &kp N0 &none
+&none &none       &to M_BASE  &none  &ext_power EP_OFF &bt BT_CLR                            &none &kp N4 &kp N5 &kp N6 &kp RA(SEMI) &none
 &none &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &none  &kp N1 &kp N2 &kp N3 &none &none
                                   &none   &none   &none           &none  &none &none 
             >;
