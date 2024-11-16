@@ -1,6 +1,6 @@
 # zmk-config
 
-[![corne Keyboard custom keymap](https://github.com/user-attachments/assets/1bab1cdb-0634-48ae-a6e6-f7c0ebca4883)](http://www.keyboard-layout-editor.com/#/gists/bf533ff812829bf261ab7ea44d985077)
+[![corne Keyboard custom keymap](https://github.com/user-attachments/assets/e2662f21-ff2b-4bcd-96d1-5420a33adeb3)](http://www.keyboard-layout-editor.com/#/gists/bf533ff812829bf261ab7ea44d985077)
 
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/) configuration.
 It consists of a 36-keys base layout that is re-used for my cochofi (corne 36keys) sofle 58keys.
