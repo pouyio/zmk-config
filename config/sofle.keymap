@@ -144,7 +144,7 @@
         custom_s_m: custom_slash_mac {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LS(N7)>, <&kp BSLH>;
+            bindings = <&kp LS(N7)>, <&kp RA(NON_US_BSLH)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             label = "custom slash macos";
         };
