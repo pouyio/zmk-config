@@ -18,27 +18,19 @@
 #
 ---
 manifest:
-  defaults:
-    remote: urob
-    revision: main
-
   remotes:
-    - name: upstream
+    - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: urob
-      url-base: https://github.com/urob
-
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
   projects:
-    - name: zmk-tri-state
-      path: modules/tri-state
-
-    # ZMK with Zephyr namespaced under /zmk. This requires that ZMK imports
-    # Zephyr with a path other than `zephyr` (as in `going-modular`).
     - name: zmk
-      path: .
-      import:
-        file: app/west.yml
-        path-prefix: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+    - name: zmk-tri-state
+      remote: dhruvinsh
+      revision: main
 
   self:
     path: config
