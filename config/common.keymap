@@ -28,8 +28,8 @@
 #define ADJUST 7
 
 &lt {
-    tapping-term-ms = <250>;
-    quick-tap-ms = <200>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <175>;
     flavor = "hold-preferred";
 };
 
@@ -70,7 +70,6 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <1>;
-            label = "long press";
         };
         mt_b: mod_tap_balanced {
             compatible = "zmk,behavior-hold-tap";
@@ -78,88 +77,75 @@
             flavor = "balanced";
             tapping-term-ms = <150>;
             bindings = <&kp>, <&kp>;
-            label = "mod-tap balanced";
         };
         custom_p: custom_parenthesis {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(N8)>, <&kp LS(N9)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom parenthesis";
         };
         custom_gt: custom_gt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp NUBS>, <&kp LS(NUBS)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom greater than";
         };
         custom_gt_m: custom_gt_m {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp GRAVE>, <&kp LS(GRAVE)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom greater than mac";
         };
         custom_bk: custom_bracket {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RA(LBKT)>, <&kp RA(RBKT)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom bracket";
         };
         custom_b: custom_brace {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RA(SQT)>, <&kp RA(NUHS)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom brace";
         };
         custom_q: custom_question {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(MINUS)>, <&kp PLUS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom question";
         };
         custom_e: custom_exclamation {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(N1)>, <&kp EQUAL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom exclamation";
         };
         custom_s: custom_slash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(N7)>, <&kp RA(GRAVE)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom slash";
         };
         custom_s_m: custom_slash_mac {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(N7)>, <&kp RA(NON_US_BSLH)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom slash macos";
         };
         custom_qu: custom_quote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(N2)>, <&kp MINUS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom quote";
         };
         swap_w: tri-state-window {
             compatible = "zmk,behavior-tri-state";
-            label = "swap window";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
             ignored-key-positions = <12>;
         };
         swap_t: tri-state-tab {
             compatible = "zmk,behavior-tri-state";
-            label = "swap tab";
             #binding-cells = <0>;
             bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
             ignored-key-positions = <22>;
@@ -170,77 +156,66 @@
             bindings = <&kp LC(LS(TAB))>, <&kp LS(TAB)>;
             mods = <MOD_LCTL>;
             keep-mods = <MOD_LCTL>;
-            label = "swap tab prev";
         };
         n1f1: f1_behavior {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N1>, <&kp F1>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "1/F1 behavior";
         };
         n2f2: f2_behavior {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N2>, <&kp F2>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "2/F2 behavior";
         };
         n3f3: f3_behavior {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N3>, <&kp F3>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "3/F3 behavior";
         };
         n4f4: f4_behavior {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N4>, <&kp F4>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "4/F4 behavior";
         };
         n5f5: f5_behavior {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N5>, <&kp F5>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "5/F5 behavior";
         };
         n6f6: f6_behavior {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N6>, <&kp F6>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "6/F6 behavior";
         };
         n7f7: f7_behavior {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N7>, <&kp F7>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "7/F7 behavior";
         };
         n8f8: f8_behavior {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N8>, <&kp F8>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "8/F8 behavior";
         };
         n9f9: f9_behavior {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N9>, <&kp F9>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "9/F9 behavior";
         };
         n0f10: f10_behavior {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N0>, <&kp F10>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "0/F10 behavior";
         };
     };
 
@@ -260,7 +235,7 @@
         compatible = "zmk,keymap";
 
         default_layer_m {
-            label = "m_default";
+            display-name = "m_default";
 // ------------------------------------------------------------------------------------------------------------
 // |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |   I   |  O   |   P   |
 // |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |   K   |  L   |  Ñ   |
@@ -275,7 +250,7 @@
         };
 
         default_layer {
-            label = "default";
+            display-name = "default";
 // ------------------------------------------------------------------------------------------------------------
 // |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |   I   |  O   |   P   |
 // |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |   K   |  L   |  Ñ   | 
@@ -290,7 +265,7 @@
         };
 
         lower_layer_m {
-            label = "m_lower";
+            display-name = "m_lower";
 // ------------------------------------------------------------------------------------------------------------
 // |VOLU | MUTE|PRV_WPC|NXT_WPC|      |                   |  &   |  /    |  (    |  )   |   =   |
 // | VOLD | PLAY | prev_w | swap_w |      |                   |  !   |  <    |  {    |  [   |   ?   |
@@ -307,7 +282,7 @@
         };
 
         lower_layer {
-            label = "lower";
+            display-name = "lower";
 // ------------------------------------------------------------------------------------------------------------
 // |VOLU | MUTE|PRV_WPC|NXT_WPC|    |                   |  &   |  /    |  (    |  )   |   =   |
 // | VOLD | PLAY | prev_w | swap_w |      |                   |  !   |  <    |  {    |  [   |   ?   |
@@ -323,7 +298,7 @@
         };
 
         raise_layer_m {
-            label = "m_raise";
+            display-name = "m_raise";
 // ------------------------------------------------------------------------------------------------------------
 // |   |  |   @  |   #   |   $   |   %  |                |      |PRVWD |       |NXTWD |       |
 // |      |      |       |       |      |                |  <-  |  v   |   ^   |  ->  |       |
@@ -338,7 +313,7 @@
         };
 
         raise_layer {
-            label = "raise";
+            display-name = "raise";
 // ------------------------------------------------------------------------------------------------------------
 // |   |  |   @  |   #   |   $   |   %  |                |      |PRVWD |       |NXTWD |       |
 // |      |      |       |       |      |                |  <-  |   v  |   ^   |  ->  |       |
@@ -358,7 +333,7 @@
 // |  BT1   |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |   4  |   5   |  6   |   ~   |
 // |  SHIFT |  ALT    |  CTRL   |         |         |                  |      |   1  |   2   |  3   |       |
 //                              |         |         |         | |      |      |      |
-            label = "adjust_m";
+            display-name = "adjust_m";
              bindings = <
 &to M_BASE   &to BASE     &kp RA(E)    &ext_power EP_OFF &bt BT_CLR                 &none &n7f7 &n8f8 &n9f9 &n0f10 
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4                   &none &n4f4 &n5f5 &n6f6 &kp RA(SEMI) 
@@ -373,7 +348,7 @@
 // |  BT1   |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |   4  |   5   |  6   |   ~   |
 // |  SHIFT |  ALT    |  CTRL   |         |         |                  |      |   1  |   2   |  3   |       |
 //                              |         |         |         | |      |      |      |
-            label = "adjust";
+            display-name = "adjust";
             bindings = <
 &to M_BASE   &to BASE     &kp RA(E)    &ext_power EP_OFF &bt BT_CLR             &none &n7f7 &n8f8 &n9f9 &n0f10 
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4               &none &n4f4 &n5f5 &n6f6 &kp RA(N4) 

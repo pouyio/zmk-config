@@ -5,7 +5,7 @@
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/) configuration.
 It consists of a 36-keys base layout that is re-used for my cochofi (corne 36keys) sofle 58keys.
 
-This config uses [urob's ZMK](https://github.com/urob/zmk) fork which includes several PRs, relevant for me the [swapper implementation](https://github.com/zmkfirmware/zmk/pull/1366) for tri-state keys. I will switch to official ZMK once swapper PR is merged. In case I need my own ZMK fork [this guide](https://gist.github.com/urob/68a1e206b2356a01b876ed02d3f542c7) is excellent
+This config uses [this external module](https://github.com/dhruvinsh/zmk-tri-state) for tri-state (swapper). Not included in official zmk.
 
 Config adapted to **my** personal needs:
 
@@ -20,9 +20,26 @@ Config adapted to **my** personal needs:
 - Layer tap in raise/lower buttons.
 - Only sofle: [Gaming layers for left half](https://github.com/pouyio/keymaps-qmk/blob/master/sofle/README.md).
 
-## Instructions
+## First setup for local development
 
-To build in local follow the [official development guide](https://zmk.dev/docs/development/setup) and download [urob's ZMK](https://github.com/urob/zmk). Execute the custom build script:
+1. Clone in the same folder the next repos:
+   - [zmk](https://github.com/zmkfirmware/zmk) firmware.
+   - [zmk-tri-state](https://github.com/dhruvinsh/zmk-tri-state) external module.
+   - This repo.
+2. Follow [the official instructions](https://zmk.dev/docs/development/local-toolchain/setup/native), `Install globally` is the preferred option.
+
+The final structure should be:
+
+<pre>
+~/workspace/
+          ├── zmk/ 
+          ├── zmk-tri-state/ 
+          └── zmk-config/
+</pre>
+
+## Build Instructions
+
+Execute the custom build script:
 `./scripts/zmk_build.sh -l -v 3.5 --host-config-dir /home/zmk-config --host-zmk-dir /home/zmk -o /home/zmk-config/build  -- -p`
 
 Change `--host-config-dir`, `--host-zmk-dir` and/or `-o` to the correct directories

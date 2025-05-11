@@ -30,7 +30,8 @@
 #define GAME_LOWER 9
 
 &lt {
-    tapping-term-ms = <150>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <175>;
     flavor = "hold-preferred";
 };
 
@@ -83,81 +84,69 @@
             tapping-term-ms = <300>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <1>;
-            label = "long press";
         };
         custom_p: custom_parenthesis {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(N8)>, <&kp LS(N9)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom parenthesis";
         };
         custom_gt: custom_gt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp NUBS>, <&kp LS(NUBS)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom greater than";
         };
         custom_gt_m: custom_gt_m {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp GRAVE>, <&kp LS(GRAVE)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom greater than mac";
         };
         custom_bk: custom_bracket {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RA(LBKT)>, <&kp RA(RBKT)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom bracket";
         };
         custom_b: custom_brace {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RA(SQT)>, <&kp RA(NUHS)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom brace";
         };
         custom_q: custom_question {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(MINUS)>, <&kp PLUS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom question";
         };
         custom_e: custom_exclamation {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(N1)>, <&kp EQUAL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom exclamation";
         };
         custom_s: custom_slash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(N7)>, <&kp RA(GRAVE)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom slash";
         };
         custom_s_m: custom_slash_mac {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LS(N7)>, <&kp RA(NON_US_BSLH)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "custom slash macos";
         };
         swap_w: tri-state-window {
             compatible = "zmk,behavior-tri-state";
-            label = "swap window";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
             ignored-key-positions = <27>;
         };
         swap_t: tri-state-tab {
             compatible = "zmk,behavior-tri-state";
-            label = "swap tab";
             #binding-cells = <0>;
             bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
             ignored-key-positions = <39>;
@@ -168,7 +157,6 @@
             bindings = <&kp LC(LS(TAB))>, <&kp LS(TAB)>;
             mods = <MOD_LCTL>;
             keep-mods = <MOD_LCTL>;
-            label = "swap tab prev";
         };
     };
 
@@ -188,7 +176,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = "default";
+            display-name = "default";
 // ------------------------------------------------------------------------------------------------------------
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |   I   |  O   |   P   |       |
@@ -206,7 +194,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_PREV C_NEXT>;
         };
         default_layer_m {
-            label = "m_default";
+            display-name = "m_default";
 // ------------------------------------------------------------------------------------------------------------
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |   I   |  O   |   P   |       |
@@ -225,7 +213,7 @@
         };
 
         lower_layer {
-            label = "lower";
+            display-name = "lower";
 // ------------------------------------------------------------------------------------------------------------
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |VOLU | MUTE|PRV_WPC|NXT_WPC|GAME|                   |  &   |  /    |  (    |  )   |   =   |       |
@@ -243,7 +231,7 @@
             >;
         };
         lower_layer_m {
-            label = "m_lower";
+            display-name = "m_lower";
 // ------------------------------------------------------------------------------------------------------------
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |VOLU | MUTE|PRV_WPC|NXT_WPC|GAME|                   |  &   |  /    |  (    |  )   |   =   |       |
@@ -262,7 +250,7 @@
         };
 
         raise_layer {
-            label = "raise";
+            display-name = "raise";
 // ------------------------------------------------------------------------------------------------------------
 // |       |      |      |       |       |      |                 |      |      |       |      |       |       |
 // |       |   |  |   @  |   #   |   $   |   %  |                 |      |PRVWD |       |NXTWD |       |       |
@@ -278,7 +266,7 @@
             >;
         };
         raise_layer_m {
-            label = "m_raise";
+            display-name = "m_raise";
 // ------------------------------------------------------------------------------------------------------------
 // |       |      |      |       |       |      |                 |      |      |       |      |       |       |
 // |       |   |  |   @  |   #   |   $   |   %  |                |       | PRVWD |       |NXTWD |       |       |
@@ -301,7 +289,7 @@
 // |        |         |  MAC    |         |  EXTPWR |  BTCLR  |                  |      |   4  |   5   |  6   |   ~   |       |
 // |        |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |         | |      |      |   1  |   2   |  3   |       |       |
 //                    |         |         |         |         |         | |      |      |      |       |      |
-            label = "adjust";
+            display-name = "adjust";
             bindings = <
 &none  &none         &none         &none         &none         &none                          &none &none &none &none &none &none
 &none  &none         &to BASE   &kp RA(E)   &none   &none                                       &none &kp N7 &kp N8 &kp N9 &kp N0 &none
@@ -317,7 +305,7 @@
 // |        |         |  MAC    |         |  EXTPWR |  BTCLR  |                  |      |   4  |   5   |  6   |   ~   |       |
 // |        |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |         | |      |      |   1  |   2   |  3   |       |       |
 //                    |         |         |         |         |         | |      |      |      |       |      |
-            label = "adjust_m";
+            display-name = "adjust_m";
             bindings = <
 &none  &none         &none         &none         &none         &none                          &none &none &none &none &none &none
 &none  &none         &to BASE      &kp RA(E)   &none        &none                             &none &kp N7 &kp N8 &kp N9 &kp N0 &none
@@ -327,7 +315,7 @@
             >;
         };
         game_layer {
-            label = "game";
+            display-name = "game";
 // ------------------------------------------------------------------------------------------------------------
 // |  ESC   |   1   |   2   |   3   |   4   |   5   |                  |   6   |   7   |   8   |   9   |   0   |       |
 // |  TAB   |   Q   |   W   |   E   |   R   |   T   |                  |   Y   |   U   |   I   |   O   |   P   | BKSPC |
@@ -347,7 +335,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_PREV C_NEXT>;
         };
         game_lower_layer {
-            label = "game-lower";
+            display-name = "game-lower";
 // ------------------------------------------------------------------------------------------------------------
 // |  ESC  |  F1   |  F2   |  F3    |  F4    |  F5    |                   |   6   |   7   |   8   |   9   |   0   |       |
 // |  TAB  |       |   ^   |        |        |        |                   |   Y   |   U   |   I   |   O   |   P   | BKSPC |
