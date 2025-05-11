@@ -28,7 +28,8 @@
 #define ADJUST 7
 
 &lt {
-    tapping-term-ms = <150>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <150>;
     flavor = "hold-preferred";
 };
 
