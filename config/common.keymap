@@ -62,6 +62,12 @@
     };
 
     behaviors {
+        td_media: tap_dance_media {  
+            compatible = "zmk,behavior-tap-dance";  
+            #binding-cells = <0>;  
+            tapping-term-ms = <200>;  
+            bindings = <&kp C_NEXT>, <&kp C_PREV>;
+        };
         lp: long_press {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -267,14 +273,14 @@
             display-name = "m_lower";
 // ------------------------------------------------------------------------------------------------------------
 // |VOLU | MUTE|PRV_WPC|NXT_WPC|      |                   |  &   |  /    |  (    |  )   |   =   |
-// | VOLD | PLAY | prev_w | swap_w |      |                   |  !   |  <    |  {    |  [   |   ?   |
+// | VOLD | PLAY | prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
 // | SHIFT| CAPS | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
 //                            |      |      |        |  |       |     | WORD_DEL |
 // ------------------------------------------------------------------------------------------------------------
 
             bindings = <
 &kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &trans   &kp LS(N6) &custom_s_m     &custom_p &kp LS(N9)  &kp LS(N0) 
-&kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w  &trans                     &custom_e  &custom_gt_m &custom_b &custom_bk  &custom_q 
+&kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w  &td_media                     &custom_e  &custom_gt_m &custom_b &custom_bk  &custom_q 
 &kp LSHFT &kp CAPS    &swap_t_p &swap_t  &kp LBKT                        &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
                                        &trans    &trans  &trans &trans  &lt M_RAISE LA(BSPC)  &kp LA(DEL)
             >;
@@ -284,13 +290,13 @@
             display-name = "lower";
 // ------------------------------------------------------------------------------------------------------------
 // |VOLU | MUTE|PRV_WPC|NXT_WPC|    |                   |  &   |  /    |  (    |  )   |   =   |
-// | VOLD | PLAY | prev_w | swap_w |      |                   |  !   |  <    |  {    |  [   |   ?   |
+// | VOLD | PLAY | prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
 // | SHIFT| CAPS | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
 //                            |      |      |        |  |       |     | WORD_DEL |
 // ------------------------------------------------------------------------------------------------------------
             bindings = <
 &kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &trans      &kp LS(N6) &custom_s     &custom_p &kp LS(N9)  &kp LS(N0) 
-&kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w  &trans                        &custom_e &custom_gt  &custom_b &custom_bk &custom_q 
+&kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w &td_media                        &custom_e &custom_gt  &custom_b &custom_bk &custom_q 
 &kp LSHFT &kp CAPS    &swap_t_p &swap_t  &kp LBKT                          &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
                                    &trans    &trans  &trans &trans  &lt RAISE LC(BSPC)  &kp LC(DEL)
             >;
