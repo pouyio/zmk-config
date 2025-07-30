@@ -35,6 +35,18 @@
 / {
     combos {
         compatible = "zmk,combos";
+        combo_meh_win {
+            timeout-ms = <50>;
+            key-positions = <11  12  13>;
+            bindings = <&kp LS(LA(LCTRL))>;
+            layers = <BASE>;
+        };
+        combo_meh_mac {
+            timeout-ms = <50>;
+            key-positions = <11  12  13>;
+            bindings = <&kp LS(LA(LCTRL))>;
+            layers = <M_BASE>;
+        };
         combo_gui_left {
             timeout-ms = <50>;
             key-positions = <3 13>;
