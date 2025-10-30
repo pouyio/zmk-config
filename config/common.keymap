@@ -27,6 +27,14 @@
 #define M_ADJUST 6
 #define ADJUST 7
 
+#define MEH_A &kp LS(LA(LC(A)))
+#define MEH_S &kp LS(LA(LC(S)))
+#define MEH_D &kp LS(LA(LC(D)))
+#define MEH_F &kp LS(LA(LC(F)))
+#define MEH_G &kp LS(LA(LC(G)))
+#define MEH_SP &kp LS(LA(LC(SPACE)))
+#define MEH_ESC &kp LS(LA(LC(ESC)))
+
 &lt {
     tapping-term-ms = <200>;
     flavor = "hold-preferred";
@@ -323,9 +331,9 @@
 //                               |       |      |      |  |      |      |      |
             bindings = <
 &kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &trans     &kp LA(LEFT) &trans &kp LA(RIGHT) &trans
-&kp LS(LA(LC(A))) &kp LS(LA(LC(S))) &kp LS(LA(LC(D))) &kp LS(LA(LC(F))) &kp LS(LA(LC(G)))        &kp LEFT   &kp DOWN   &kp UP &kp RIGHT   &trans 
-&trans       &trans       &trans      &trans       &trans                   &trans  &kp RG(LEFT)    &trans   &kp RG(RIGHT)    &trans 
-                         &trans       &trans      &kp LS(LA(LC(SPACE))) &trans  &trans    &trans
+MEH_A        MEH_S        MEH_D       MEH_F        MEH_G                    &kp LEFT   &kp DOWN   &kp UP &kp RIGHT   &trans 
+MEH_Z        MEH_X        MEH_C       MEH_V        MEH_B                    &trans  &kp RG(LEFT)    &trans   &kp RG(RIGHT)    &trans 
+                          MEH_ESC     &trans      MEH_SP                    &trans  &trans    &trans
             >;
         };
 
