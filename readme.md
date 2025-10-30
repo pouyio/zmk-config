@@ -1,6 +1,6 @@
 # zmk-config
 
-[![corne Keyboard custom keymap](https://github.com/user-attachments/assets/2b83b1cf-ff46-4d07-9783-4de8216d6d1a)](http://www.keyboard-layout-editor.com/#/gists/bf533ff812829bf261ab7ea44d985077)
+[![corne Keyboard custom keymap](https://github.com/user-attachments/assets/2c5a75f6-54d0-44aa-8bef-093b4a91e635)](http://www.keyboard-layout-editor.com/#/gists/bf533ff812829bf261ab7ea44d985077)
 
 
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/) configuration.
