@@ -355,13 +355,13 @@
 // ----------------------------------------------------------------------------------------------------------------------------
 // |  MAC   |  WIN    |    €    | EXTPWR  |  BTCLR  |                  |      |   7  |   8   |  9   |   0   |
 // |  BT1   |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |   4  |   5   |  6   |   ~   |
-// |  SHIFT |  ALT    |  CTRL   |         |         |                  |      |   1  |   2   |  3   |       |
+// |  SHIFT |  ALT    |         |         |         |                  |      |   1  |   2   |  3   |       |
 //                              |         |         |         | |      |      |      |
             display-name = "adjust_m";
              bindings = <
 &to M_BASE   &to BASE     &kp RA(E)    &ext_power EP_OFF &bt BT_CLR                 &none &n7f7 &n8f8 &n9f9 &n0f10 
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4                   &none &n4f4 &n5f5 &n6f6 &kp RA(SEMI) 
-&kp LSHIFT   &kp LALT     &kp LGUI     &none         &none                          &none &n1f1 &n2f2 &n3f3 &none 
+&kp LSHIFT   &kp LALT     &none        &none         &none                          &none &n1f1 &n2f2 &n3f3 &none 
                                   &none   &none   &none           &none  &none &none 
             >;
         };
@@ -370,13 +370,13 @@
 // ----------------------------------------------------------------------------------------------------------------------------
 // |  MAC   |  WIN    |    €    | EXTPWR  |  BTCLR  |                  |      |   7  |   8   |  9   |   0   |
 // |  BT1   |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |   4  |   5   |  6   |   ~   |
-// |  SHIFT |  ALT    |  CTRL   |         |         |                  |      |   1  |   2   |  3   |       |
+// |  SHIFT |  ALT    |         |         |         |                  |      |   1  |   2   |  3   |       |
 //                              |         |         |         | |      |      |      |
             display-name = "adjust";
             bindings = <
 &to M_BASE   &to BASE     &kp RA(E)    &ext_power EP_OFF &bt BT_CLR             &none &n7f7 &n8f8 &n9f9 &n0f10 
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4               &none &n4f4 &n5f5 &n6f6 &kp RA(N4) 
-&kp LSHIFT   &kp LALT     &kp LCTRL    &none         &none                      &none &n1f1 &n2f2 &n3f3 &none 
+&kp LSHIFT   &kp LALT     &none        &none         &none                      &none &n1f1 &n2f2 &n3f3 &none 
                                   &none   &none   &none           &none  &none &none 
             >;
         };
