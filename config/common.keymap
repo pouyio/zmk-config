@@ -32,6 +32,8 @@
 #define MEH_D LS(LA(LC(D)))
 #define MEH_F LS(LA(LC(F)))
 #define MEH_G LS(LA(LC(G)))
+#define MEH_T LS(LA(LC(F)))
+#define MEH_W LS(LA(LC(D)))
 #define MEH_SPACE LS(LA(LC(SPACE)))
 
 &lt {
@@ -291,16 +293,16 @@
         lower_layer_m {
             display-name = "m_lower";
 // ------------------------------------------------------------------------------------------------------------
-// |VOLU | MUTE|PRV_WPC|NXT_WPC|      |                   |  &   |  /    |  (    |  )   |   =   |
+// |VOLU | MUTE|PRV_WPC|NXT_WPC|MEH_T |                   |  &   |  /    |  (    |  )   |   =   |
 // | VOLD | PLAY | prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
-// | SHIFT| CAPS | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
+// | SHIFT| MEH_A | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
 //                            |      |      |        |  |       |     | WORD_DEL |
 // ------------------------------------------------------------------------------------------------------------
 
             bindings = <
-&kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &trans   &kp LS(N6) &custom_s_m     &custom_p &kp LS(N9)  &kp LS(N0) 
-&kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w  &td_media                     &custom_e  &custom_gt_m &custom_b &custom_bk  &custom_q 
-&kp LSHFT &kp CAPS    &swap_t_p &swap_t  &kp LBKT                        &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
+&kp C_VOL_UP &kp MEH_W &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp MEH_T   &kp LS(N6) &custom_s_m     &custom_p &kp LS(N9)  &kp LS(N0) 
+&kp C_VOL_DN &lp C_MUTE C_PP &kp LS(TAB) &swap_w  &td_media                     &custom_e  &custom_gt_m &custom_b &custom_bk  &custom_q 
+&kp LSHFT &kp MEH_A    &swap_t_p &swap_t  &kp LBKT                        &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
                                        &trans    &trans  &trans &trans  &lt M_RAISE LA(BSPC)  &kp LA(DEL)
             >;
         };
@@ -308,15 +310,15 @@
         lower_layer {
             display-name = "lower";
 // ------------------------------------------------------------------------------------------------------------
-// |VOLU | MUTE|PRV_WPC|NXT_WPC|    |                   |  &   |  /    |  (    |  )   |   =   |
+// |VOLU | MUTE|PRV_WPC|NXT_WPC|MEH_T|                 |  &   |  /    |  (    |  )   |   =   |
 // | VOLD | PLAY | prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
-// | SHIFT| CAPS | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
+// | SHIFT| MEH_A | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
 //                            |      |      |        |  |       |     | WORD_DEL |
 // ------------------------------------------------------------------------------------------------------------
             bindings = <
-&kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &trans      &kp LS(N6) &custom_s     &custom_p &kp LS(N9)  &kp LS(N0) 
-&kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w &td_media                        &custom_e &custom_gt  &custom_b &custom_bk &custom_q 
-&kp LSHFT &kp CAPS    &swap_t_p &swap_t  &kp LBKT                          &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
+&kp C_VOL_UP &kp MEH_W &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp MEH_T      &kp LS(N6) &custom_s     &custom_p &kp LS(N9)  &kp LS(N0) 
+&kp C_VOL_DN &lp C_MUTE C_PP &kp LS(TAB) &swap_w &td_media                        &custom_e &custom_gt  &custom_b &custom_bk &custom_q 
+&kp LSHFT &kp MEH_A    &swap_t_p &swap_t  &kp LBKT                          &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
                                    &trans    &trans  &trans &trans  &lt RAISE LC(BSPC)  &kp LC(DEL)
             >;
         };
@@ -324,12 +326,12 @@
         raise_layer_m {
             display-name = "m_raise";
 // ------------------------------------------------------------------------------------------------------------
-// |   |  |   @  |   #   |   $   |   %  |                |      |PRVWD |       |NXTWD |       |
+// |   |  |   @  |   #   |   $   |   %  |                |      |PRVWD |       |NXTWD |  CAPS |
 // |      |      |       |       |      |                |  <-  |  v   |   ^   |  ->  |       |
 // |      |      |       |       |      |                |      | HOME |       | END  |       |
 //                               |       |      |      |  |      |      |      |
             bindings = <
-&kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &trans     &kp LA(LEFT) &trans &kp LA(RIGHT) &trans
+&kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &trans     &kp LA(LEFT) &trans &kp LA(RIGHT) &kp CAPS
 &kp MEH_A    &kp MEH_S    &kp MEH_D   &kp MEH_F    &kp MEH_G                &kp LEFT   &kp DOWN   &kp UP &kp RIGHT   &trans 
 &trans       &trans       &trans      &trans       &trans                   &trans  &kp RG(LEFT)    &trans   &kp RG(RIGHT)    &trans 
                           &trans      &trans       &kp MEH_SPACE            &trans  &trans    &trans
@@ -344,7 +346,7 @@
 // |      |      |       |       |      |                |      | HOME |       | END  |       |
 //                               |       |      |      |  |      |      |      |
             bindings = <
-&kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &trans       &kp LC(LEFT) &trans &kp LC(RIGHT) &trans 
+&kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &trans       &kp LC(LEFT) &trans &kp LC(RIGHT) &kp CAPS
 &kp MEH_A    &kp MEH_S    &kp MEH_D   &kp MEH_F    &kp MEH_G                &kp LEFT     &kp DOWN   &kp UP &kp RIGHT   &trans 
 &trans       &trans       &trans      &trans       &trans                   &trans       &kp HOME   &trans &kp END    &trans 
                           &trans      &trans       &kp MEH_SPACE            &trans       &trans    &trans
