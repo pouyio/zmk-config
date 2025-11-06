@@ -27,13 +27,11 @@
 #define M_ADJUST 6
 #define ADJUST 7
 
-#define MEH_A LS(LA(LC(A)))
-#define MEH_S LS(LA(LC(S)))
-#define MEH_D LS(LA(LC(D)))
-#define MEH_F LS(LA(LC(F)))
-#define MEH_G LS(LA(LC(G)))
+#define MEH_X LS(LA(LC(X)))
 #define MEH_T LS(LA(LC(F)))
 #define MEH_W LS(LA(LC(D)))
+#define MEH_I LS(LA(LC(I)))
+#define MEH_Y LS(LA(LC(Y)))
 
 &lt {
     tapping-term-ms = <200>;
@@ -292,16 +290,16 @@
         lower_layer_m {
             display-name = "m_lower";
 // ------------------------------------------------------------------------------------------------------------
-// |VOLU | MUTE|PRV_WPC|NXT_WPC|MEH_T |                   |  &   |  /    |  (    |  )   |   =   |
-// | VOLD | PLAY | prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
-// | SHIFT| MEH_A | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
+// |VOLU | MEH_W |PRV_WPC|NXT_WPC|MEH_T |                   |  &   |  /    |  (    |  )   |   =   |
+// | VOLD |PLAY-MUTE| prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
+// | SHIFT| MEH_X | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
 //                            |      |      |        |  |       |     | WORD_DEL |
 // ------------------------------------------------------------------------------------------------------------
 
             bindings = <
 &kp C_VOL_UP &kp MEH_W &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp MEH_T   &kp LS(N6) &custom_s_m     &custom_p &kp LS(N9)  &kp LS(N0) 
 &kp C_VOL_DN &lp C_MUTE C_PP &kp LS(TAB) &swap_w  &td_media                     &custom_e  &custom_gt_m &custom_b &custom_bk  &custom_q 
-&kp LSHFT &kp MEH_A    &swap_t_p &swap_t  &kp LBKT                        &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
+&kp LSHFT &kp MEH_X    &swap_t_p &swap_t  &kp LBKT                        &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
                                        &trans    &trans  &trans &trans  &lt M_RAISE LA(BSPC)  &kp LA(DEL)
             >;
         };
@@ -309,15 +307,15 @@
         lower_layer {
             display-name = "lower";
 // ------------------------------------------------------------------------------------------------------------
-// |VOLU | MUTE|PRV_WPC|NXT_WPC|MEH_T|                 |  &   |  /    |  (    |  )   |   =   |
-// | VOLD | PLAY | prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
-// | SHIFT| MEH_A | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
+// |VOLU | MEH_W|PRV_WPC|NXT_WPC|MEH_T|                 |  &   |  /    |  (    |  )   |   =   |
+// | VOLD |PLAY-MUTE| prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
+// | SHIFT| MEH_X | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
 //                            |      |      |        |  |       |     | WORD_DEL |
 // ------------------------------------------------------------------------------------------------------------
             bindings = <
 &kp C_VOL_UP &kp MEH_W &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp MEH_T      &kp LS(N6) &custom_s     &custom_p &kp LS(N9)  &kp LS(N0) 
 &kp C_VOL_DN &lp C_MUTE C_PP &kp LS(TAB) &swap_w &td_media                        &custom_e &custom_gt  &custom_b &custom_bk &custom_q 
-&kp LSHFT &kp MEH_A    &swap_t_p &swap_t  &kp LBKT                          &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
+&kp LSHFT &kp MEH_X    &swap_t_p &swap_t  &kp LBKT                          &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
                                    &trans    &trans  &trans &trans  &lt RAISE LC(BSPC)  &kp LC(DEL)
             >;
         };
@@ -325,13 +323,13 @@
         raise_layer_m {
             display-name = "m_raise";
 // ------------------------------------------------------------------------------------------------------------
-// |   |  |   @  |   #   |   $   |   %  |                |      |PRVWD |       |NXTWD |  CAPS |
+// |   |  |   @  |   #   |   $   |   %  |                | MEH_Y|PRVWD |MEH_I  |NXTWD |  CAPS |
 // |      |      |       |       |      |                |  <-  |  v   |   ^   |  ->  |       |
 // |      |      |       |       |      |                |      | HOME |       | END  |       |
 //                               |       |      |      |  |      |      |      |
             bindings = <
-&kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &trans     &kp LA(LEFT) &trans &kp LA(RIGHT) &kp CAPS
-&kp MEH_A    &kp MEH_S    &kp MEH_D   &kp MEH_F    &kp MEH_G                &kp LEFT   &kp DOWN   &kp UP &kp RIGHT   &trans 
+&kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &kp MEH_Y  &kp LA(LEFT) &kp MEH_I &kp LA(RIGHT) &kp CAPS
+&trans       &trans       &trans      &trans       &trans                   &kp LEFT   &kp DOWN   &kp UP &kp RIGHT   &trans 
 &trans       &trans       &trans      &trans       &trans                   &trans  &kp RG(LEFT)    &trans   &kp RG(RIGHT)    &trans 
                           &trans      &trans       &trans            &trans  &trans    &trans
             >;
@@ -340,13 +338,13 @@
         raise_layer {
             display-name = "raise";
 // ------------------------------------------------------------------------------------------------------------
-// |   |  |   @  |   #   |   $   |   %  |                |      |PRVWD |       |NXTWD |       |
+// |   |  |   @  |   #   |   $   |   %  |                | MEH_Y|PRVWD | MEH_I |NXTWD |       |
 // |      |      |       |       |      |                |  <-  |   v  |   ^   |  ->  |       |
 // |      |      |       |       |      |                |      | HOME |       | END  |       |
 //                               |       |      |      |  |      |      |      |
             bindings = <
-&kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &trans       &kp LC(LEFT) &trans &kp LC(RIGHT) &kp CAPS
-&kp MEH_A    &kp MEH_S    &kp MEH_D   &kp MEH_F    &kp MEH_G                &kp LEFT     &kp DOWN   &kp UP &kp RIGHT   &trans 
+&kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &kp MEH_Y   &kp LC(LEFT) &kp MEH_I &kp LC(RIGHT) &kp CAPS
+&trans       &trans       &trans      &trans       &trans                   &kp LEFT     &kp DOWN   &kp UP &kp RIGHT   &trans 
 &trans       &trans       &trans      &trans       &trans                   &trans       &kp HOME   &trans &kp END    &trans 
                           &trans      &trans       &trans            &trans       &trans    &trans
             >;
