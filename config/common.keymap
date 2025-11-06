@@ -34,7 +34,6 @@
 #define MEH_G LS(LA(LC(G)))
 #define MEH_T LS(LA(LC(F)))
 #define MEH_W LS(LA(LC(D)))
-#define MEH_SPACE LS(LA(LC(SPACE)))
 
 &lt {
     tapping-term-ms = <200>;
@@ -334,7 +333,7 @@
 &kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &trans     &kp LA(LEFT) &trans &kp LA(RIGHT) &kp CAPS
 &kp MEH_A    &kp MEH_S    &kp MEH_D   &kp MEH_F    &kp MEH_G                &kp LEFT   &kp DOWN   &kp UP &kp RIGHT   &trans 
 &trans       &trans       &trans      &trans       &trans                   &trans  &kp RG(LEFT)    &trans   &kp RG(RIGHT)    &trans 
-                          &trans      &trans       &kp MEH_SPACE            &trans  &trans    &trans
+                          &trans      &trans       &trans            &trans  &trans    &trans
             >;
         };
 
@@ -349,7 +348,7 @@
 &kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &trans       &kp LC(LEFT) &trans &kp LC(RIGHT) &kp CAPS
 &kp MEH_A    &kp MEH_S    &kp MEH_D   &kp MEH_F    &kp MEH_G                &kp LEFT     &kp DOWN   &kp UP &kp RIGHT   &trans 
 &trans       &trans       &trans      &trans       &trans                   &trans       &kp HOME   &trans &kp END    &trans 
-                          &trans      &trans       &kp MEH_SPACE            &trans       &trans    &trans
+                          &trans      &trans       &trans            &trans       &trans    &trans
             >;
         };
 
