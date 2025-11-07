@@ -28,8 +28,8 @@
 #define ADJUST 7
 
 #define MEH_X LS(LA(LC(X)))
-#define MEH_T LS(LA(LC(F)))
-#define MEH_W LS(LA(LC(D)))
+#define MEH_T LS(LA(LC(T)))
+#define MEH_W LS(LA(LC(W)))
 #define MEH_I LS(LA(LC(I)))
 #define MEH_Y LS(LA(LC(Y)))
 
