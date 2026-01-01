@@ -27,6 +27,12 @@
 #define M_ADJUST 6
 #define ADJUST 7
 
+#define MEH_X LS(LA(LC(X)))
+#define MEH_T LS(LA(LC(T)))
+#define MEH_W LS(LA(LC(W)))
+#define MEH_I LS(LA(LC(I)))
+#define MEH_Y LS(LA(LC(Y)))
+
 &lt {
     tapping-term-ms = <200>;
     flavor = "hold-preferred";
@@ -35,18 +41,6 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_meh_win {
-            timeout-ms = <50>;
-            key-positions = <11  12  13>;
-            bindings = <&kp LS(LA(LCTRL))>;
-            layers = <BASE>;
-        };
-        combo_meh_mac {
-            timeout-ms = <50>;
-            key-positions = <11  12  13>;
-            bindings = <&kp LS(LA(LCTRL))>;
-            layers = <M_BASE>;
-        };
         combo_gui_left {
             timeout-ms = <50>;
             key-positions = <3 13>;
@@ -284,16 +278,16 @@
         lower_layer_m {
             display-name = "m_lower";
 // ------------------------------------------------------------------------------------------------------------
-// |VOLU | MUTE|PRV_WPC|NXT_WPC|      |                   |  &   |  /    |  (    |  )   |   =   |
-// | VOLD | PLAY | prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
-// | SHIFT| CAPS | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
+// |VOLU | MEH_W |PRV_WPC|NXT_WPC|MEH_T |                   |  &   |  /    |  (    |  )   |   =   |
+// | VOLD |PLAY-MUTE| prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
+// | SHIFT| MEH_X | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
 //                            |      |      |        |  |       |     | WORD_DEL |
 // ------------------------------------------------------------------------------------------------------------
 
             bindings = <
-&kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &trans   &kp LS(N6) &custom_s_m     &custom_p &kp LS(N9)  &kp LS(N0) 
-&kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w  &td_media                     &custom_e  &custom_gt_m &custom_b &custom_bk  &custom_q 
-&kp LSHFT &kp CAPS    &swap_t_p &swap_t  &kp LBKT                        &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
+&kp C_VOL_UP &kp MEH_W &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp MEH_T   &kp LS(N6) &custom_s_m     &custom_p &kp LS(N9)  &kp LS(N0) 
+&kp C_VOL_DN &lp C_MUTE C_PP &kp LS(TAB) &swap_w  &td_media                     &custom_e  &custom_gt_m &custom_b &custom_bk  &custom_q 
+&kp LSHFT &kp MEH_X    &swap_t_p &swap_t  &kp LBKT                        &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
                                        &trans    &trans  &trans &trans  &lt M_RAISE LA(BSPC)  &kp LA(DEL)
             >;
         };
@@ -301,15 +295,15 @@
         lower_layer {
             display-name = "lower";
 // ------------------------------------------------------------------------------------------------------------
-// |VOLU | MUTE|PRV_WPC|NXT_WPC|    |                   |  &   |  /    |  (    |  )   |   =   |
-// | VOLD | PLAY | prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
-// | SHIFT| CAPS | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
+// |VOLU | MEH_W|PRV_WPC|NXT_WPC|MEH_T|                 |  &   |  /    |  (    |  )   |   =   |
+// | VOLD |PLAY-MUTE| prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
+// | SHIFT| MEH_X | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
 //                            |      |      |        |  |       |     | WORD_DEL |
 // ------------------------------------------------------------------------------------------------------------
             bindings = <
-&kp C_VOL_UP &kp C_MUTE &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &trans      &kp LS(N6) &custom_s     &custom_p &kp LS(N9)  &kp LS(N0) 
-&kp C_VOL_DN &kp C_PP &kp LS(TAB) &swap_w &td_media                        &custom_e &custom_gt  &custom_b &custom_bk &custom_q 
-&kp LSHFT &kp CAPS    &swap_t_p &swap_t  &kp LBKT                          &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
+&kp C_VOL_UP &kp MEH_W &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp MEH_T      &kp LS(N6) &custom_s     &custom_p &kp LS(N9)  &kp LS(N0) 
+&kp C_VOL_DN &lp C_MUTE C_PP &kp LS(TAB) &swap_w &td_media                        &custom_e &custom_gt  &custom_b &custom_bk &custom_q 
+&kp LSHFT &kp MEH_X    &swap_t_p &swap_t  &kp LBKT                          &kp RBKT &custom_qu &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH) 
                                    &trans    &trans  &trans &trans  &lt RAISE LC(BSPC)  &kp LC(DEL)
             >;
         };
@@ -317,30 +311,30 @@
         raise_layer_m {
             display-name = "m_raise";
 // ------------------------------------------------------------------------------------------------------------
-// |   |  |   @  |   #   |   $   |   %  |                |      |PRVWD |       |NXTWD |       |
+// |   |  |   @  |   #   |   $   |   %  |                | MEH_Y|PRVWD |MEH_I  |NXTWD |  CAPS |
 // |      |      |       |       |      |                |  <-  |  v   |   ^   |  ->  |       |
 // |      |      |       |       |      |                |      | HOME |       | END  |       |
 //                               |       |      |      |  |      |      |      |
             bindings = <
-&kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &trans     &kp LA(LEFT) &trans &kp LA(RIGHT) &trans
+&kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &kp MEH_Y  &kp LA(LEFT) &kp MEH_I &kp LA(RIGHT) &kp CAPS
 &trans       &trans       &trans      &trans       &trans                   &kp LEFT   &kp DOWN   &kp UP &kp RIGHT   &trans 
 &trans       &trans       &trans      &trans       &trans                   &trans  &kp RG(LEFT)    &trans   &kp RG(RIGHT)    &trans 
-                         &trans       &trans        &trans                 &trans  &trans    &trans
+                          &trans      &trans       &trans            &trans  &trans    &trans
             >;
         };
 
         raise_layer {
             display-name = "raise";
 // ------------------------------------------------------------------------------------------------------------
-// |   |  |   @  |   #   |   $   |   %  |                |      |PRVWD |       |NXTWD |       |
+// |   |  |   @  |   #   |   $   |   %  |                | MEH_Y|PRVWD | MEH_I |NXTWD |       |
 // |      |      |       |       |      |                |  <-  |   v  |   ^   |  ->  |       |
 // |      |      |       |       |      |                |      | HOME |       | END  |       |
 //                               |       |      |      |  |      |      |      |
             bindings = <
-&kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &trans       &kp LC(LEFT) &trans &kp LC(RIGHT) &trans 
-&trans      &trans       &trans      &trans       &trans                    &kp LEFT     &kp DOWN   &kp UP &kp RIGHT   &trans 
-&trans      &trans       &trans      &trans       &trans                    &trans       &kp HOME    &trans   &kp END    &trans 
-                        &trans       &trans      &trans                       &trans  &trans    &trans
+&kp RA(N1)   &kp RA(N2)   &kp RA(N3)  &kp LS(N4)   &kp LS(N5)               &kp MEH_Y   &kp LC(LEFT) &kp MEH_I &kp LC(RIGHT) &kp CAPS
+&trans       &trans       &trans      &trans       &trans                   &kp LEFT     &kp DOWN   &kp UP &kp RIGHT   &trans 
+&trans       &trans       &trans      &trans       &trans                   &trans       &kp HOME   &trans &kp END    &trans 
+                          &trans      &trans       &trans            &trans       &trans    &trans
             >;
         };
 
@@ -348,13 +342,13 @@
 // ----------------------------------------------------------------------------------------------------------------------------
 // |  MAC   |  WIN    |    €    | EXTPWR  |  BTCLR  |                  |      |   7  |   8   |  9   |   0   |
 // |  BT1   |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |   4  |   5   |  6   |   ~   |
-// |  SHIFT |  ALT    |  CTRL   |         |         |                  |      |   1  |   2   |  3   |       |
+// |  SHIFT |  ALT    |         |         |         |                  |      |   1  |   2   |  3   |       |
 //                              |         |         |         | |      |      |      |
             display-name = "adjust_m";
              bindings = <
 &to M_BASE   &to BASE     &kp RA(E)    &ext_power EP_OFF &bt BT_CLR                 &none &n7f7 &n8f8 &n9f9 &n0f10 
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4                   &none &n4f4 &n5f5 &n6f6 &kp RA(SEMI) 
-&kp LSHIFT   &kp LALT     &kp LGUI     &none         &none                          &none &n1f1 &n2f2 &n3f3 &none 
+&kp LSHIFT   &kp LALT     &none        &none         &none                          &none &n1f1 &n2f2 &n3f3 &none 
                                   &none   &none   &none           &none  &none &none 
             >;
         };
@@ -363,13 +357,13 @@
 // ----------------------------------------------------------------------------------------------------------------------------
 // |  MAC   |  WIN    |    €    | EXTPWR  |  BTCLR  |                  |      |   7  |   8   |  9   |   0   |
 // |  BT1   |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |   4  |   5   |  6   |   ~   |
-// |  SHIFT |  ALT    |  CTRL   |         |         |                  |      |   1  |   2   |  3   |       |
+// |  SHIFT |  ALT    |         |         |         |                  |      |   1  |   2   |  3   |       |
 //                              |         |         |         | |      |      |      |
             display-name = "adjust";
             bindings = <
 &to M_BASE   &to BASE     &kp RA(E)    &ext_power EP_OFF &bt BT_CLR             &none &n7f7 &n8f8 &n9f9 &n0f10 
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4               &none &n4f4 &n5f5 &n6f6 &kp RA(N4) 
-&kp LSHIFT   &kp LALT     &kp LCTRL    &none         &none                      &none &n1f1 &n2f2 &n3f3 &none 
+&kp LSHIFT   &kp LALT     &none        &none         &none                      &none &n1f1 &n2f2 &n3f3 &none 
                                   &none   &none   &none           &none  &none &none 
             >;
         };
