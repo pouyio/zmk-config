@@ -4,7 +4,7 @@
 
 
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/) configuration.
-It consists of a 36-keys base layout that is re-used for my cochofi (corne 36keys) sofle 58keys.
+It consists of a 36-keys base layout.
 
 This config uses [this external module](https://github.com/dhruvinsh/zmk-tri-state) for tri-state (swapper). Not included in official zmk.
 
@@ -17,9 +17,8 @@ Config adapted to **my** personal needs:
 ## Features:
 
 - Shift/Alt mod tap in base row, both sides.
-- Added macros for both Mac and Linux/Win (change workspace, change tab).
+- Added macros for both Mac and Linux/Win (change workspace, change tab, MEH keys, alt-tab, delete word, etc).
 - Layer tap in raise/lower buttons.
-- Only sofle: [Gaming layers for left half](https://github.com/pouyio/keymaps-qmk/blob/master/sofle/README.md).
 
 ## First setup for local development
 
