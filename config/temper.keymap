@@ -1,1 +1,2 @@
+#include "layouts/36.h"
 #include "common.keymap"
