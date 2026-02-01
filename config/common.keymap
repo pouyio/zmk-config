@@ -228,11 +228,11 @@
 
         default_layer_m {
             display-name = "m_default";
-// ------------------------------------------------------------------------------------------------------------
-// |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |   I   |  O   |   P   |
-// |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |   K   |  L   |  Ñ   |
-// |Z/SHIFT|X/ALT| C  |  V   |  B   |                   |  N   |  M    |   ,   |  .   |-/SHIFT|
-//                         | CTRL/ESC | LOWER/TAB|  SPACE |  | ENTER | RAISE/BKSPC| DEL  |
+// ----------------------------------------------------------------------------------------------------------------------
+// |   Q    |   W    |   E    |   R    |   T    |             |   Y    |   U    |   I    |   O    |   P    |
+// |   A    |   S    |   D    |   F    |   G    |             |   H    |   J    |   K    |   L    |   Ñ    |
+// |Z/SHIFT |X/ALT   |   C    |   V    |   B    |             |   N    |   M    |   ,    |   .    |-/SHIFT |
+//                | CTRL/ESC  | LOWER/TAB |  SPACE   |  ENTER   | RAISE/BKSPC |  DEL   |
             bindings = <LAYOUT_MAP(
 &kp Q,&kp W,   &kp E,   &kp R,    &kp T,                           &kp Y, &kp U,    &kp I,    &kp O,   &kp P,
 &kp A, &kp S,   &kp D,   &kp F,    &kp G,                          &kp H, &kp J,    &kp K,    &kp L,  &lp SEMI SQT, 
@@ -243,11 +243,11 @@
 
         default_layer {
             display-name = "default";
-// ------------------------------------------------------------------------------------------------------------
-// |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |   I   |  O   |   P   |
-// |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |   K   |  L   |  Ñ   | 
-// |Z/SHIFT|X/ALT| C  |  V   |  B   |                   |  N   |  M    |   ,   |  .   |-/SHIFT|
-//               | CTRL/ESC | LOWER/TAB|  SPACE |  | ENTER | RAISE/BKSPC| DEL  |
+// ----------------------------------------------------------------------------------------------------------------------
+// |   Q    |   W    |   E    |   R    |   T    |             |   Y    |   U    |   I    |   O    |   P    |
+// |   A    |   S    |   D    |   F    |   G    |             |   H    |   J    |   K    |   L    |   Ñ    |
+// |Z/SHIFT |X/ALT   |   C    |   V    |   B    |             |   N    |   M    |   ,    |   .    |-/SHIFT |
+//                | CTRL/ESC  | LOWER/TAB |  SPACE   |  ENTER   | RAISE/BKSPC |  DEL   |
             bindings = <LAYOUT_MAP(
 &kp Q, &kp W,    &kp E,    &kp R,     &kp T,                            &kp Y,  &kp U,     &kp I,     &kp O,    &kp P,
 &kp A,  &kp S,    &kp D,    &kp F,     &kp G,                           &kp H,  &kp J,     &kp K,     &kp L,   &lp SEMI SQT,
@@ -258,12 +258,11 @@
 
         lower_layer_m {
             display-name = "m_lower";
-// ------------------------------------------------------------------------------------------------------------
-// |VOLU |       |PRV_WPC|NXT_WPC|      |                   |  &   |  /    |  (    |  )   |   =   |
-// | VOLD |PLAY-MUTE| prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
-// | SHIFT|       | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
-//                            |      |      |        |  |       |     | WORD_DEL |
-// ------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------
+// | VOLU    |         | PRV_WPC | NXT_WPC |         |             |   &    |   /    |   (    |   )    |   =    |
+// | VOLD    |PLAY-MUTE| prev_w  | swap_w  |NXT/PRV  |             |   !    |   <    |   {    |   [    |   ?    |
+// | SHIFT   |         | prev_t  | swap_t  |   `     |             |   +    |   '    |   ;    |   :    |   _    |
+//                |           |           |         |             |         | WORD_DEL |
 
             bindings = <LAYOUT_MAP(
 &kp C_VOL_UP, &trans,    &kp LC(LG(LEFT)), &kp LC(LG(RIGHT)), &trans,      &kp LS(N6), &custom_s_m,     &custom_p, &kp LS(N9),  &kp LS(N0),
@@ -275,12 +274,11 @@
 
         lower_layer {
             display-name = "lower";
-// ------------------------------------------------------------------------------------------------------------
-// |VOLU |      |PRV_WPC|NXT_WPC|     |                 |  &   |  /    |  (    |  )   |   =   |
-// | VOLD |PLAY-MUTE| prev_w | swap_w |NXT/PRV|                   |  !   |  <    |  {    |  [   |   ?   |
-// | SHIFT|       | prev_t | swap_t |  `   |                   |  +   |  " '  |  ;    |  :   |   _   |
-//                            |      |      |        |  |       |     | WORD_DEL |
-// ------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------------------
+// | VOLU    |         | PRV_WPC | NXT_WPC |         |             |   &    |   /    |   (    |   )    |   =    |
+// | VOLD    |PLAY-MUTE| prev_w  | swap_w  |NXT/PRV  |             |   !    |   <    |   {    |   [    |   ?    |
+// | SHIFT   |         | prev_t  | swap_t  |   `     |             |   +    |   '    |   ;    |   :    |   _    |
+//                |           |           |         |             |         | WORD_DEL |
             bindings = <LAYOUT_MAP(
 &kp C_VOL_UP, &trans,    &kp LC(LG(LEFT)), &kp LC(LG(RIGHT)), &trans,         &kp LS(N6), &custom_s,     &custom_p, &kp LS(N9),  &kp LS(N0),
 &kp C_VOL_DN, &lp C_MUTE C_PP, &kp LS(TAB), &swap_w, &td_media,                        &custom_e, &custom_gt,  &custom_b, &custom_bk, &custom_q,
@@ -291,11 +289,11 @@
 
         raise_layer_m {
             display-name = "m_raise";
-// ------------------------------------------------------------------------------------------------------------
-// |   |  |   @  |   #   |   $   |   %  |                |      |PRVWD |       |NXTWD |  CAPS |
-// |      |      |       |       |      |                |  <-  |  v   |   ^   |  ->  |       |
-// |      |      |       |       |      |                |      | HOME |       | END  |       |
-//                               |       |      |      |  |      |      |      |
+// ----------------------------------------------------------------------------------------------------------------------
+// |        |        |   @    |   #    |   $    |   %    |             |        | PRVWD  |        | NXTWD  | CAPS   |
+// |        |        |        |        |        |        |             |  <-    |   v    |   ^    |   ->   |        |
+// |        |        |        |        |        |        |             |        | HOME   |        | END    |        |
+//                |         |        |        |             |        |        |
             bindings = <LAYOUT_MAP(
 &kp RA(N1),   &kp RA(N2),   &kp RA(N3),  &kp LS(N4),   &kp LS(N5),               &trans,     &kp LA(LEFT), &trans,    &kp LA(RIGHT), &kp CAPS,
 &trans,       &trans,       &trans,      &trans,       &trans,                   &kp LEFT,   &kp DOWN,   &kp UP, &kp RIGHT,   &trans,
@@ -306,11 +304,11 @@
 
         raise_layer {
             display-name = "raise";
-// ------------------------------------------------------------------------------------------------------------
-// |   |  |   @  |   #   |   $   |   %  |                |      |PRVWD |       |NXTWD |       |
-// |      |      |       |       |      |                |  <-  |   v  |   ^   |  ->  |       |
-// |      |      |       |       |      |                |      | HOME |       | END  |       |
-//                               |       |      |      |  |      |      |      |
+// ----------------------------------------------------------------------------------------------------------------------
+// |        |        |   @    |   #    |   $    |   %    |             |        | PRVWD  |        | NXTWD  |        |
+// |        |        |        |        |        |        |             |  <-    |   v    |   ^    |   ->   |        |
+// |        |        |        |        |        |        |             |        | HOME   |        | END    |        |
+//                |         |        |        |             |        |        |
             bindings = <LAYOUT_MAP(
 &kp RA(N1),   &kp RA(N2),   &kp RA(N3),  &kp LS(N4),   &kp LS(N5),               &trans,      &kp LC(LEFT), &trans, &kp LC(RIGHT), &kp CAPS,
 &trans,       &trans,       &trans,      &trans,       &trans,                   &kp LEFT,     &kp DOWN,   &kp UP, &kp RIGHT,   &trans,
@@ -320,11 +318,11 @@
         };
 
         adjust_layer_m {
-// ----------------------------------------------------------------------------------------------------------------------------
-// |  MAC   |  WIN    |    €    | EXTPWR  |  BTCLR  |                  |      |   7  |   8   |  9   |   0   |
-// |  BT1   |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |   4  |   5   |  6   |   ~   |
-// |  SHIFT |  ALT    |         |         |         |                  |      |   1  |   2   |  3   |       |
-//                              |         |         |         | |      |      |      |
+// ----------------------------------------------------------------------------------------------------------------------
+// |  MAC   |  WIN   |   €    | EXTPWR | BTCLR  |             |   7   |   8   |   9   |   0   |
+// |  BT1   |  BT2   |  BT3   |  BT4   |  BT5   |             |   4   |   5   |   6   |   ~   |
+// | SHIFT  |  ALT   |        |        |        |             |   1   |   2   |   3   |       |
+//                |        |        |        |             |       |       |
             display-name = "adjust_m";
              bindings = <LAYOUT_MAP(
 &to M_BASE,   &to BASE,     &kp RA(E),    &ext_power EP_OFF, &bt BT_CLR,                 &none, &n7f7, &n8f8, &n9f9, &n0f10,
@@ -335,11 +333,11 @@
         };
 
         adjust_layer {
-// ----------------------------------------------------------------------------------------------------------------------------
-// |  MAC   |  WIN    |    €    | EXTPWR  |  BTCLR  |                  |      |   7  |   8   |  9   |   0   |
-// |  BT1   |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |   4  |   5   |  6   |   ~   |
-// |  SHIFT |  ALT    |         |         |         |                  |      |   1  |   2   |  3   |       |
-//                              |         |         |         | |      |      |      |
+// ----------------------------------------------------------------------------------------------------------------------
+// |  MAC   |  WIN   |   €    | EXTPWR | BTCLR  |             |   7   |   8   |   9   |   0   |
+// |  BT1   |  BT2   |  BT3   |  BT4   |  BT5   |             |   4   |   5   |   6   |   ~   |
+// | SHIFT  |  ALT   |        |        |        |             |   1   |   2   |   3   |       |
+//                |        |        |        |             |       |       |
             display-name = "adjust";
             bindings = <LAYOUT_MAP(
 &to M_BASE,   &to BASE,     &kp RA(E),    &ext_power EP_OFF, &bt BT_CLR,             &none, &n7f7, &n8f8, &n9f9, &n0f10,
